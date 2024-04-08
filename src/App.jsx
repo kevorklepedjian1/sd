@@ -108,12 +108,12 @@ function App() {
   
   const handleSubmit = async () => {
     try {
-      if (!editMode) {  await axios.post('http://localhost:5000/api/form', formData);toast.success('Form submitted successfully!');
+      if (!editMode) {  await axios.post('https://backend-lake-psi.vercel.app/api/form', formData);toast.success('Form submitted successfully!');
         
       } else {
         // Construct exercise string based on selected exercise type and hours per week
       
-      await axios.put(`http://localhost:5000/api/form/${selectedIdentifierData._id}`, selectedIdentifierData);
+      await axios.put(`https://backend-lake-psi.vercel.app/api/form/${selectedIdentifierData._id}`, selectedIdentifierData);
         toast.success('Form updated successfully!');
         
       }
