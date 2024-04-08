@@ -327,6 +327,81 @@ function App() {
       abdominalUltrasoundDate: ''
     });
   };
+  const handlePreviousPage = () => {
+    setCurrentPage(currentPage - 1);
+    setSelectedIdentifier('');
+    setShowSummary(false);
+    setFormData({
+      identifier: '',
+      age: '',
+      gender: '',
+      exercise: '',
+      modestactivityhours: '',
+      highintensityhours: '',
+      weight: '',
+      race: '',
+      education: '',
+      smokertype: '',
+      lungDisease: '',
+      familyHistory: '',
+      name: '',
+      vegetablesservings: '',
+      redmeatservings: '',
+      drinksalcohol: '',
+      number: '',
+      drinksperweek: '',
+      quitsmoking: '',
+      startsmoking: '',
+      cigarettesperday: '',
+      yearssmoked: '',
+      quitdate: '',
+      colorectalCancer: '',
+      colorectalCancerAge: '',
+      breastCancerWomen: '',
+      breastCancerWomenSiblings: '',
+      breastCancerWomenAge: '',
+      lungCancer: '',
+      lungCancerAge: '',
+      bladderCancer: '',
+      bladderCancerAge: '',
+      prostateCancerMen: '',
+      prostateCancerMenAge: '',
+      abdominalAorticAneurysm: '',
+      abdominalAorticAneurysmAge: '',
+      coronaryArteryDisease: '',
+      coronaryArteryDiseaseAge: '',
+      hypertension: '',
+      diabetesMellitus: '',
+      dyslipidemia: '',
+      inflammatoryBowelDisease: '',
+      stress: '',
+      mood: '',
+      mutationInBRCA: '',
+      ageAtFirstMenstrualPeriod: '',
+      ageAtFirstChild: '',
+      antihypertensives: '',
+      antilipidemic: '',
+      aspirin: '',
+      aspirinLast30Days: '',
+      nsaid: '',
+      nsaidLast30Days: '',
+      otherMedication: '',
+      colonoscopy: '',
+      sigmoidoscopy: '',
+      lungCT: '',
+      breastMammography: '',
+      breastBiopsy: '',
+      papSmear: '',
+      abdominalUltrasound: '',
+      colonoscopyDate: '',
+      sigmoidoscopyDate: '',
+      lungCTDate: '',
+      breastMammographyDate: '',
+      breastBiopsyDate: '',
+      papSmearDate: '',
+      abdominalUltrasoundDate: ''
+    });
+  };
 
   const handleIdentifierSelect = async (selectedId) => {
     const selectedData = allForms.find((form) => form.identifier === selectedId);
@@ -1249,6 +1324,9 @@ console.log(identifiers);
       )}
       {currentPage < totalPages && (
         <button type="button" onClick={handleNextPage}>Next</button>
+      )}
+      {currentPage > 1 && (
+        <button type="button" onClick={handlePreviousPage}>Previous</button>
       )}
       <button type="button" className="btn-reset" onClick={handleReset}>Reset</button>
       <Modal
